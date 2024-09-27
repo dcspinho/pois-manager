@@ -1,0 +1,39 @@
+{
+  "name": "ryd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npx tsx src/index.ts",
+    "migrations": "npx tsx src/migrations/migrations.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:get-config": "eslint --print-config eslint.config.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcspinho/ryd.git"
+  },
+  "keywords": [],
+  "author": "Diana Pinho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcspinho/ryd/issues"
+  },
+  "homepage": "https://github.com/dcspinho/ryd#readme",
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "@types/pg": "^8.11.10",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.7.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "pg": "^8.13.0"
+  }
+}
