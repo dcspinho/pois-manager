@@ -7,7 +7,10 @@
     "build": "npx tsc",
     "start": "npx tsx src/index.ts",
     "migrations": "npx tsx src/migrations/migrations.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrations:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./src/ormconfig.ts src/migrations/migrations.ts",
+    "migrations:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/ormconfig.ts",
+    "migrations:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/ormconfig.ts",
+    "test": "jest --silent",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:get-config": "eslint --print-config eslint.config.mjs"
@@ -24,16 +27,27 @@
   },
   "homepage": "https://github.com/dcspinho/ryd#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
     "@types/pg": "^8.11.10",
+    "@types/supertest": "^6.0.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.7.0"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "pg": "^8.13.0"
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
   }
 }
