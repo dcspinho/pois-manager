@@ -1,15 +1,16 @@
-# CRUD service for managing Points of Interest (POIs)
+# Service for managing Points of Interest
 
 This is a CRUD service built using TypeScript, Node.js, and PostgreSQL.
 The service is specifically focused on petrol stations.
 
+For detailed information on the proposed improvements and changes, refer to the [IMPROVEMENTS.md](./IMPROVEMENTS.md) file.
+
 ## Features
 
 1. Create, update, delete, and retrieve Points of Interest (POIs) representing petrol stations;
-2. Manage opening hours for POIs;
+2. Manage opening hours for POIs (NOT YET DONE);
 3. Manage pumps associated with each POI and fuel products;
-4. Manage fuel products and their prices, including currency rate information.
-
+4. Manage fuel products and their prices, including currency rate information (ALL NOT YET DONE).
 
 ## Requirements
 
@@ -99,7 +100,15 @@ npm run lint:get-config
 
 ## Usage
 
+> POSTMAN available via the [collection](https://www.postman.com/martian-rocket-76341/workspace/ryd/collection/18435220-c7e5a739-91e3-4e7e-914f-853c287e1f2c?action=share&creator=18435220).
+
 > **Note:** Do not forget to have the PostgreSQL Docker container running before starting.
+
+## Database diagram
+
+The following diagram illustrates the Entity-Relationship Diagram:
+
+![Entity-Relationship Diagram](images/dbDiagram.png)
 
 ## File Structure
 
@@ -136,7 +145,10 @@ dto
 │   ├── index.ts                                # Main entry point for the command-line application
 │   └── ormconfig.ts                            # TypeORM configuration for database connection
 ├── tests/                                      # Directory for tests
+│   ├── integration/                            # Integration tests
 │   └── unit/                                   # Unit tests
+├── images/                                     # Usefull images
+├── dump/                                       # PostgreSQL database dump
 ├── .env                                        # Environment variables for database and API keys
 ├── .env.example                                # Example environment file
 ├── .env.test                                   # Test environment file
